@@ -1,0 +1,303 @@
+[
+  {
+    "case_id": "dialog_normal_001",
+    "label": "normal",
+    "is_mock": true,
+    "dialogue_turns": [
+      {
+        "assistant": "今天大概是星期几？您是怎么判断的？",
+        "user": "今天是周六，我早上看了手机日期确认过。"
+      },
+      {
+        "assistant": "您早饭吃了什么？一会儿我可能还会再问一次。",
+        "user": "吃了小米粥、鸡蛋，还有一点青菜。"
+      },
+      {
+        "assistant": "刚才我们聊到的事情里，您还记得一件吗？",
+        "user": "记得，刚才说到我早饭吃了小米粥和鸡蛋。"
+      },
+      {
+        "assistant": "如果下午要出门散步，您会先准备什么？",
+        "user": "我会先换鞋，带钥匙和水杯，再看看天气。"
+      },
+      {
+        "assistant": "请从 20 往回数三个数。",
+        "user": "20、17、14。"
+      }
+    ],
+    "expected_risk_level": "low",
+    "expected_low_domains": [],
+    "notes": "模拟数据，非临床数据；整体回答连贯，定向、记忆和执行步骤表现稳定。"
+  },
+  {
+    "case_id": "dialog_normal_002",
+    "label": "normal",
+    "is_mock": true,
+    "dialogue_turns": [
+      {
+        "assistant": "现在我们在什么地方？",
+        "user": "在家里客厅，桌上有水杯和报纸。"
+      },
+      {
+        "assistant": "请用一句话描述一下房间里的一个东西。",
+        "user": "窗边有一盆绿色植物，叶子比较亮。"
+      },
+      {
+        "assistant": "如果把水杯放在桌子左边，您会怎么确认方向？",
+        "user": "我会看自己的左手边，再把水杯放到桌子左侧。"
+      },
+      {
+        "assistant": "刚才您描述了什么东西？",
+        "user": "我描述了窗边那盆绿色植物。"
+      },
+      {
+        "assistant": "如果要给家人打电话，您会怎么做？",
+        "user": "先拿手机，找到联系人，再拨过去。"
+      }
+    ],
+    "expected_risk_level": "low",
+    "expected_low_domains": [],
+    "notes": "模拟数据，非临床数据；语言描述、空间方向和计划步骤较清楚。"
+  },
+  {
+    "case_id": "dialog_normal_003",
+    "label": "normal",
+    "is_mock": true,
+    "dialogue_turns": [
+      {
+        "assistant": "今天早上您做了什么？",
+        "user": "我起床后洗漱，吃早饭，然后在楼下走了一圈。"
+      },
+      {
+        "assistant": "请记住三个词：苹果、钥匙、蓝色。",
+        "user": "好的，苹果、钥匙、蓝色。"
+      },
+      {
+        "assistant": "请从 30 往回数三个数。",
+        "user": "30、27、24。"
+      },
+      {
+        "assistant": "刚才那三个词还记得吗？",
+        "user": "记得，是苹果、钥匙、蓝色。"
+      },
+      {
+        "assistant": "如果下雨还要出门，您会怎么安排？",
+        "user": "先带伞，穿防滑鞋，路上慢一点。"
+      }
+    ],
+    "expected_risk_level": "low",
+    "expected_low_domains": [],
+    "notes": "模拟数据，非临床数据；延迟回忆、注意计算和执行安排均较稳定。"
+  },
+  {
+    "case_id": "dialog_mild_decline_001",
+    "label": "mild_decline",
+    "is_mock": true,
+    "dialogue_turns": [
+      {
+        "assistant": "今天大概是星期几？您是怎么判断的？",
+        "user": "好像是周四，也可能是周五，我不太确定。"
+      },
+      {
+        "assistant": "您早饭吃了什么？一会儿我可能还会再问一次。",
+        "user": "应该喝了粥，别的我有点想不起来。"
+      },
+      {
+        "assistant": "刚才我们聊到早饭，能再说一遍吗？",
+        "user": "我记得有粥，鸡蛋有没有吃我忘了。"
+      },
+      {
+        "assistant": "请从 20 往回数三个数。",
+        "user": "20、18、15，后面有点乱。"
+      },
+      {
+        "assistant": "如果下午要出门散步，您会先准备什么？",
+        "user": "我会先出门吧，钥匙可能需要别人提醒。"
+      }
+    ],
+    "expected_risk_level": "medium",
+    "expected_low_domains": [
+      "orientation",
+      "memory",
+      "attention",
+      "executive_function"
+    ],
+    "notes": "模拟数据，非临床数据；时间定向不确定，回忆部分遗漏，倒数和出门准备有轻度困难。"
+  },
+  {
+    "case_id": "dialog_mild_decline_002",
+    "label": "mild_decline",
+    "is_mock": true,
+    "dialogue_turns": [
+      {
+        "assistant": "现在我们在什么地方？",
+        "user": "应该是在家吧，我刚才还以为是在楼下。"
+      },
+      {
+        "assistant": "请把水杯放在桌子左边，您会怎么确认方向？",
+        "user": "左边我得想一下，可能要看别人指一下。"
+      },
+      {
+        "assistant": "如果下午要去买菜，您会先做什么？",
+        "user": "先去吧，买什么可能路上再想。"
+      },
+      {
+        "assistant": "请用一句话描述桌上的东西。",
+        "user": "桌上有杯子，还有别的东西，我一时说不上来。"
+      },
+      {
+        "assistant": "刚才我们说水杯要放哪边？",
+        "user": "好像是左边，不过我不太确定。"
+      }
+    ],
+    "expected_risk_level": "medium",
+    "expected_low_domains": [
+      "orientation",
+      "visuospatial",
+      "executive_function",
+      "language",
+      "memory"
+    ],
+    "notes": "模拟数据，非临床数据；地点、左右方向、计划步骤和短时记忆均有轻度不稳定。"
+  },
+  {
+    "case_id": "dialog_mild_decline_003",
+    "label": "mild_decline",
+    "is_mock": true,
+    "dialogue_turns": [
+      {
+        "assistant": "请记住三个词：苹果、钥匙、蓝色。",
+        "user": "苹果、钥匙、蓝色。"
+      },
+      {
+        "assistant": "请从 30 往回数三个数。",
+        "user": "30、28、25，我数得有点慢。"
+      },
+      {
+        "assistant": "刚才三个词还记得吗？",
+        "user": "苹果记得，钥匙好像也有，第三个忘了。"
+      },
+      {
+        "assistant": "如果炉子上有水在烧，门铃又响了，您会怎么做？",
+        "user": "我可能先去开门，炉子这边得有人提醒我。"
+      },
+      {
+        "assistant": "请用一句话描述今天早上的安排。",
+        "user": "早上就是吃饭，其他事情不太记得了。"
+      }
+    ],
+    "expected_risk_level": "medium",
+    "expected_low_domains": [
+      "memory",
+      "attention",
+      "executive_function",
+      "language"
+    ],
+    "notes": "模拟数据，非临床数据；延迟回忆、注意倒数和双任务处理存在轻度异常信号。"
+  },
+  {
+    "case_id": "dialog_obvious_issue_001",
+    "label": "obvious_issue",
+    "is_mock": true,
+    "dialogue_turns": [
+      {
+        "assistant": "今天大概是星期几？您是怎么判断的？",
+        "user": "我不知道，可能是过年那几天吧。"
+      },
+      {
+        "assistant": "现在我们在什么地方？",
+        "user": "像是在医院，也可能是在车站，我说不清。"
+      },
+      {
+        "assistant": "您早饭吃了什么？",
+        "user": "我没有吃吧，或者昨天吃了面条，我分不清。"
+      },
+      {
+        "assistant": "刚才我们聊到早饭，能再说一遍吗？",
+        "user": "你刚才没有问我这个吧。"
+      },
+      {
+        "assistant": "请从 20 往回数三个数。",
+        "user": "20、19、16、嗯，不会了。"
+      }
+    ],
+    "expected_risk_level": "high",
+    "expected_low_domains": [
+      "orientation",
+      "memory",
+      "attention"
+    ],
+    "notes": "模拟数据，非临床数据；明显时间和地点混乱，近期记忆与注意计算均有异常表现。"
+  },
+  {
+    "case_id": "dialog_obvious_issue_002",
+    "label": "obvious_issue",
+    "is_mock": true,
+    "dialogue_turns": [
+      {
+        "assistant": "如果下午要出门散步，您会先准备什么？",
+        "user": "直接走就行，门锁不锁都没关系吧。"
+      },
+      {
+        "assistant": "如果炉子上有水在烧，门铃又响了，您会怎么做？",
+        "user": "我先出去看看，炉子可能自己会停。"
+      },
+      {
+        "assistant": "请把水杯放在桌子左边，您会怎么确认方向？",
+        "user": "左边右边我一直弄不明白，随便放一个地方。"
+      },
+      {
+        "assistant": "刚才我问过您要把水杯放在哪里吗？",
+        "user": "没有吧，我不记得你问过。"
+      },
+      {
+        "assistant": "请用一句话描述桌上的东西。",
+        "user": "桌子，那个，东西在那边，就是那样。"
+      }
+    ],
+    "expected_risk_level": "high",
+    "expected_low_domains": [
+      "executive_function",
+      "visuospatial",
+      "memory",
+      "language"
+    ],
+    "notes": "模拟数据，非临床数据；安全决策、空间方向、近期记忆和语言描述均出现明显异常信号。"
+  },
+  {
+    "case_id": "dialog_obvious_issue_003",
+    "label": "obvious_issue",
+    "is_mock": true,
+    "dialogue_turns": [
+      {
+        "assistant": "请记住三个词：苹果、钥匙、蓝色。",
+        "user": "苹果，什么，蓝，钥匙。"
+      },
+      {
+        "assistant": "请从 30 往回数三个数。",
+        "user": "30、40、20，我不想数了。"
+      },
+      {
+        "assistant": "刚才三个词还记得吗？",
+        "user": "没有三个词吧，我只听到你说要出去。"
+      },
+      {
+        "assistant": "今天大概是什么日期？",
+        "user": "日期不知道，可能是很多年前的那个时候。"
+      },
+      {
+        "assistant": "如果要给家人打电话，您会怎么做？",
+        "user": "电话会自己找人吧，我不知道按哪里。"
+      }
+    ],
+    "expected_risk_level": "high",
+    "expected_low_domains": [
+      "memory",
+      "attention",
+      "orientation",
+      "executive_function",
+      "language"
+    ],
+    "notes": "模拟数据，非临床数据；延迟回忆失败，倒数错误，日期混乱，工具使用步骤不清。"
+  }
+]

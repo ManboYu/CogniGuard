@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      color: #1f2421;
+      font-family: "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+      background: transparent;
+    }
+    body {
+      margin: 0;
+      background: transparent;
+    }
+    .panel {
+      border-radius: 22px;
+      background: linear-gradient(180deg, #fffdf8 0%, #f4f8f4 100%);
+      border: 1px solid #cfe0d3;
+      padding: clamp(18px, 3vw, 24px);
+      box-sizing: border-box;
+      box-shadow: 0 18px 44px rgba(31, 36, 33, 0.08);
+    }
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .label {
+      color: #b5654a;
+      font-size: clamp(15px, 2.2vw, 18px);
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+    .statePill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #c8d9cd;
+      border-radius: 999px;
+      background: #eaf2ed;
+      color: #4a6557;
+      padding: 7px 12px;
+      font-size: clamp(14px, 2vw, 17px);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .statePill::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #5c7a6b;
+      box-shadow: 0 0 0 5px rgba(92, 122, 107, 0.14);
+    }
+    .status {
+      font-family: Georgia, "Noto Serif SC", "Songti SC", serif;
+      font-size: clamp(28px, 5.2vw, 48px);
+      line-height: 1.18;
+      font-weight: 700;
+      color: #1f2421;
+      margin: 0 0 10px;
+    }
+    .hint {
+      font-size: clamp(18px, 3.2vw, 28px);
+      line-height: 1.42;
+      font-weight: 650;
+      color: #5a615c;
+      margin: 8px 0 14px;
+    }
+    .audioFrame {
+      display: none;
+      border: 1px solid #e5e0d5;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 8px 10px 2px;
+      margin: 12px 0 14px;
+    }
+    .meterHead {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: #5a615c;
+      font-size: clamp(16px, 2.6vw, 22px);
+      font-weight: 800;
+      margin: 18px 0 8px;
+    }
+    .meter {
+      height: 28px;
+      border-radius: 999px;
+      background: #e5e0d5;
+      overflow: hidden;
+      margin: 0;
+      box-shadow: inset 0 1px 2px rgba(31, 36, 33, 0.08);
+    }
+    .bar {
+      width: 3%;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #5c7a6b 0%, #8aa591 62%, #b5654a 100%);
+      transition: width 80ms linear;
+    }
+    .wave {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      align-items: end;
+      gap: 7px;
+      height: 58px;
+      margin: 16px 0 12px;
+      padding: 0 4px;
+    }
+    .wave span {
+      display: block;
+      border-radius: 999px 999px 8px 8px;
+      background: #c8d9cd;
+      min-height: 12px;
+      animation: waveIdle 1.4s ease-in-out infinite;
+      opacity: 0.78;
+    }
+    .wave span:nth-child(1) { height: 18px; animation-delay: 0ms; }
+    .wave span:nth-child(2) { height: 30px; animation-delay: 80ms; }
+    .wave span:nth-child(3) { height: 44px; animation-delay: 160ms; }
+    .wave span:nth-child(4) { height: 55px; animation-delay: 240ms; }
+    .wave span:nth-child(5) { height: 42px; animation-delay: 320ms; }
+    .wave span:nth-child(6) { height: 28px; animation-delay: 400ms; }
+    .wave span:nth-child(7) { height: 20px; animation-delay: 480ms; }
+    body[data-state="listening"] .wave span {
+      background: #5c7a6b;
+      animation-name: waveListen;
+      opacity: 1;
+    }
+    body[data-state="processing"] .wave span {
+      background: #a9762b;
+    }
+    body[data-state="error"] .statePill {
+      background: #f3e4dc;
+      border-color: #d9b8aa;
+      color: #7a3d2c;
+    }
+    body[data-state="error"] .statePill::before {
+      background: #b5654a;
+      box-shadow: 0 0 0 5px rgba(181, 101, 74, 0.16);
+    }
+    @keyframes waveIdle {
+      0%, 100% { transform: scaleY(0.82); }
+      50% { transform: scaleY(1); }
+    }
+    @keyframes waveListen {
+      0%, 100% { transform: scaleY(0.68); }
+      50% { transform: scaleY(1.15); }
+    }
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    button {
+      min-height: 72px;
+      border: 1px solid transparent;
+      border-radius: 18px;
+      padding: 16px 20px;
+      font-size: clamp(24px, 4.4vw, 36px);
+      font-weight: 800;
+      color: #ffffff;
+      background: linear-gradient(180deg, #647f70 0%, #54705f 100%);
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(60, 84, 70, 0.22),
+        0 2px 6px rgba(60, 84, 70, 0.14);
+    }
+    button.secondary {
+      min-height: 82px;
+      background: linear-gradient(180deg, #bb7054 0%, #a85a40 100%);
+      box-shadow: 0 10px 24px rgba(181, 101, 74, 0.20),
+        0 2px 6px rgba(181, 101, 74, 0.12);
+    }
+    button:disabled {
+      opacity: 0.58;
+      cursor: default;
+    }
+    audio {
+      width: 100%;
+      height: 48px;
+      margin: 0;
+    }
+    @media (max-width: 520px) {
+      .topline {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .wave {
+        height: 46px;
+      }
+      button {
+        min-height: 64px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="panel" role="region" aria-label="长者自动语音访谈">
+    <div class="topline">
+      <div class="label">语音感应</div>
+      <div id="statePill" class="statePill">准备中</div>
+    </div>
+    <div id="status" class="status">正在准备，请稍等。</div>
+    <div id="hint" class="hint">页面会清楚显示何时播放问题、何时听您回答。</div>
+    <div id="audioFrame" class="audioFrame">
+      <audio id="questionAudio" controls></audio>
+    </div>
+    <div class="meterHead">
+      <span>输入音量</span>
+      <span id="meterText">等待麦克风</span>
+    </div>
+    <div class="meter" aria-hidden="true"><div id="meterBar" class="bar"></div></div>
+    <div class="wave" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="actions">
+      <button id="continueButton" type="button">点一下继续</button>
+      <button id="stopButton" class="secondary" type="button">我说完了</button>
+    </div>
+  </div>
+
+  <script>
+    const statusEl = document.getElementById("status");
+    const hintEl = document.getElementById("hint");
+    const meterBar = document.getElementById("meterBar");
+    const meterText = document.getElementById("meterText");
+    const statePill = document.getElementById("statePill");
+    const audioFrame = document.getElementById("audioFrame");
+    const continueButton = document.getElementById("continueButton");
+    const stopButton = document.getElementById("stopButton");
+    const questionAudio = document.getElementById("questionAudio");
+
+    let args = {};
+    let activeStream = null;
+    let activeRecorder = null;
+    let activeAudioContext = null;
+    let analyserTimer = null;
+    let maxRecordingTimer = null;
+    let recordingStartedAt = 0;
+    let lastSpeechAt = 0;
+    let speechSeen = false;
+    let chunks = [];
+    let lastRecordingKey = "";
+    let flowRunning = false;
+    let completed = false;
+    let stopReason = "";
+
+    function sendMessageToStreamlit(type, data) {
+      window.parent.postMessage(
+        Object.assign({ isStreamlitMessage: true, type: type }, data || {}),
+        "*"
+      );
+    }
+
+    const Streamlit = {
+      setComponentReady: function () {
+        sendMessageToStreamlit("streamlit:componentReady", { apiVersion: 1 });
+      },
+      setFrameHeight: function (height) {
+        sendMessageToStreamlit("streamlit:setFrameHeight", { height: height });
+      },
+      setComponentValue: function (value) {
+        sendMessageToStreamlit("streamlit:setComponentValue", {
+          value: value,
+          dataType: "json",
+        });
+      },
+    };
+
+    function refreshHeight() {
+      window.setTimeout(function () {
+        Streamlit.setFrameHeight(document.body.scrollHeight);
+      }, 20);
+    }
+
+    function setStatus(statusText, hintText, stateText, stateName) {
+      statusEl.textContent = statusText;
+      hintEl.textContent = hintText || "";
+      statePill.textContent = stateText || "进行中";
+      document.body.dataset.state = stateName || "ready";
+      refreshHeight();
+    }
+
+    function setMeterText(text) {
+      meterText.textContent = text || "等待麦克风";
+    }
+
+    function showContinue(label, disabled) {
+      continueButton.textContent = label || "点一下继续";
+      continueButton.style.display = "block";
+      continueButton.disabled = Boolean(disabled);
+      refreshHeight();
+    }
+
+    function hideContinue() {
+      continueButton.style.display = "none";
+      refreshHeight();
+    }
+
+    function showStop() {
+      stopButton.style.display = "block";
+      stopButton.disabled = false;
+      refreshHeight();
+    }
+
+    function hideStop() {
+      stopButton.style.display = "none";
+      refreshHeight();
+    }
+
+    function resetUi() {
+      cleanupMedia();
+      flowRunning = false;
+      completed = false;
+      speechSeen = false;
+      chunks = [];
+      meterBar.style.width = "3%";
+      setMeterText("等待麦克风");
+      questionAudio.removeAttribute("src");
+      audioFrame.style.display = "none";
+      questionAudio.load();
+      hideContinue();
+      hideStop();
+      setStatus(
+        "正在准备，请稍等。",
+        "系统会先播放问题，然后自动开始听您回答。",
+        "准备中",
+        "ready"
+      );
+    }
+
+    function waitForManualStart() {
+      cleanupMedia();
+      flowRunning = false;
+      completed = false;
+      speechSeen = false;
+      chunks = [];
+      meterBar.style.width = "3%";
+      setMeterText("等待开始");
+      questionAudio.removeAttribute("src");
+      audioFrame.style.display = "none";
+      questionAudio.load();
+      hideStop();
+      setStatus(
+        "准备好了。",
+        "需要重试时，点一下继续，小顾会重新播放这一题。",
+        "等待点击",
+        "ready"
+      );
+      showContinue("点一下继续");
+    }
+
+    function cleanupMedia() {
+      if (analyserTimer) {
+        window.clearInterval(analyserTimer);
+        analyserTimer = null;
+      }
+      if (maxRecordingTimer) {
+        window.clearTimeout(maxRecordingTimer);
+        maxRecordingTimer = null;
+      }
+      if (activeAudioContext) {
+        activeAudioContext.close().catch(function () {});
+        activeAudioContext = null;
+      }
+      if (activeStream) {
+        activeStream.getTracks().forEach(function (track) {
+          track.stop();
+        });
+        activeStream = null;
+      }
+      activeRecorder = null;
+    }
+
+    function preferredMimeType() {
+      if (typeof MediaRecorder === "undefined") {
+        return "";
+      }
+      const candidates = [
+        "audio/webm;codecs=opus",
+        "audio/webm",
+        "audio/ogg;codecs=opus",
+        "audio/ogg",
+        "audio/mp4",
+      ];
+      for (const candidate of candidates) {
+        if (MediaRecorder.isTypeSupported(candidate)) {
+          return candidate;
+        }
+      }
+      return "";
+    }
+
+    async function ensureMicrophone() {
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        throw new Error("browser_no_get_user_media");
+      }
+      if (typeof MediaRecorder === "undefined") {
+        throw new Error("browser_no_media_recorder");
+      }
+      if (activeStream) {
+        return activeStream;
+      }
+      activeStream = await navigator.mediaDevices.getUserMedia({
+        audio: {
+          echoCancellation: true,
+          noiseSuppression: true,
+          autoGainControl: true,
+        },
+        video: false,
+      });
+      return activeStream;
+    }
+
+    function playQuestionAudio() {
+      return new Promise(function (resolve, reject) {
+        const audioUrl = String(args.question_audio_url || "");
+        if (!audioUrl) {
+          audioFrame.style.display = "none";
+          window.setTimeout(resolve, 800);
+          return;
+        }
+        audioFrame.style.display = "block";
+        questionAudio.src = audioUrl;
+        questionAudio.onended = function () {
+          resolve();
+        };
+        questionAudio.onerror = function () {
+          reject(new Error("question_audio_error"));
+        };
+        const playResult = questionAudio.play();
+        if (playResult && typeof playResult.then === "function") {
+          playResult.then(function () {}).catch(reject);
+        }
+      });
+    }
+
+    async function startFlow() {
+      if (flowRunning || completed) {
+        return;
+      }
+      flowRunning = true;
+      hideContinue();
+      hideStop();
+      // 先播放问题：不依赖麦克风（没麦克风也能听到问题），并保留用户手势便于浏览器放行自动播放。
+      setMeterText("请听问题");
+      setStatus("正在播放问题，请听。", "听完后再开麦克风回答。", "正在播放", "playing");
+      try {
+        await playQuestionAudio();
+      } catch (error) {
+        flowRunning = false;
+        setStatus(
+          "请点一下播放问题。",
+          "有些浏览器会阻止自动播放，点一下后就能听到问题。",
+          "等待点击",
+          "ready"
+        );
+        showContinue("点一下播放问题");
+        return;
+      }
+      // 问题播放完毕后再请求麦克风并开始录音。
+      try {
+        setMeterText("准备麦克风");
+        setStatus(
+          "正在准备麦克风。",
+          "浏览器会请求麦克风权限；只有本页显示监听时才会录音。",
+          "准备麦克风",
+          "ready"
+        );
+        const stream = await ensureMicrophone();
+        startRecording(stream);
+      } catch (error) {
+        flowRunning = false;
+        const message = friendlyError(error);
+        setMeterText("麦克风未打开");
+        setStatus("麦克风没有打开。", message, "需要授权", "error");
+        showContinue("重新打开麦克风");
+      }
+    }
+
+    function friendlyError(error) {
+      const raw = String((error && error.name) || (error && error.message) || error || "");
+      if (raw.includes("NotAllowed") || raw.includes("Permission")) {
+        return "请在浏览器里允许麦克风权限。系统不会后台录音。";
+      }
+      if (raw.includes("browser_no_media_recorder") || raw.includes("browser_no_get_user_media")) {
+        return "当前浏览器不支持自动录音，请换用新版 Chrome 或 Edge。";
+      }
+      return "请检查麦克风权限后再试一次。";
+    }
+
+    function startRecording(stream) {
+      chunks = [];
+      speechSeen = false;
+      const mimeType = preferredMimeType();
+      const maxRecordingMs = Number(args.max_recording_ms || 45000);
+      activeRecorder = mimeType
+        ? new MediaRecorder(stream, { mimeType: mimeType })
+        : new MediaRecorder(stream);
+
+      activeRecorder.ondataavailable = function (event) {
+        if (event.data && event.data.size > 0) {
+          chunks.push(event.data);
+        }
+      };
+      activeRecorder.onstop = finishRecording;
+
+      recordingStartedAt = Date.now();
+      lastSpeechAt = recordingStartedAt;
+      stopReason = "";
+      activeRecorder.start(250);
+      showStop();
+      setMeterText("正在感应");
+      setStatus(
+        "正在听您回答。",
+        "说完后停顿一下，系统会自动停止。",
+        "正在听",
+        "listening"
+      );
+      maxRecordingTimer = window.setTimeout(function () {
+        stopRecording("max_duration");
+      }, maxRecordingMs);
+      startSilenceMonitor(stream);
+    }
+
+    function startSilenceMonitor(stream) {
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContextClass) {
+        return;
+      }
+      activeAudioContext = new AudioContextClass();
+      const source = activeAudioContext.createMediaStreamSource(stream);
+      const analyser = activeAudioContext.createAnalyser();
+      analyser.fftSize = 1024;
+      source.connect(analyser);
+      const data = new Uint8Array(analyser.fftSize);
+      const silenceMs = Number(args.silence_ms || 2000);
+      const maxRecordingMs = Number(args.max_recording_ms || 45000);
+      const noSpeechTimeoutMs = Number(args.no_speech_timeout_ms || 15000);
+      const minRecordingMs = Number(args.min_recording_ms || 1200);
+      const threshold = Number(args.silence_threshold || 0.018);
+
+      analyserTimer = window.setInterval(function () {
+        if (!activeRecorder || activeRecorder.state !== "recording") {
+          return;
+        }
+        analyser.getByteTimeDomainData(data);
+        let sum = 0;
+        for (let i = 0; i < data.length; i += 1) {
+          const centered = (data[i] - 128) / 128;
+          sum += centered * centered;
+        }
+        const rms = Math.sqrt(sum / data.length);
+        const level = Math.max(3, Math.min(100, Math.round(rms * 420)));
+        meterBar.style.width = `${level}%`;
+        if (level >= 30) {
+          setMeterText("声音清楚");
+        } else if (speechSeen) {
+          setMeterText("等待停顿");
+        } else {
+          setMeterText("请靠近一点");
+        }
+
+        const now = Date.now();
+        const elapsed = now - recordingStartedAt;
+        if (rms >= threshold) {
+          speechSeen = true;
+          lastSpeechAt = now;
+        }
+        if (speechSeen && elapsed >= minRecordingMs && now - lastSpeechAt >= silenceMs) {
+          stopRecording("silence");
+          return;
+        }
+        if (!speechSeen && elapsed >= noSpeechTimeoutMs) {
+          stopWithoutSpeech();
+          return;
+        }
+        if (elapsed >= maxRecordingMs) {
+          stopRecording("max_duration");
+        }
+      }, 120);
+    }
+
+    function stopRecording(reason) {
+      if (!activeRecorder || activeRecorder.state !== "recording") {
+        return;
+      }
+      stopReason = reason || "manual";
+      setMeterText("正在识别");
+      setStatus("已经录好，正在识别。", "请稍等，系统只会提交文字结果。", "正在识别", "processing");
+      hideStop();
+      activeRecorder.stop();
+    }
+
+    function stopWithoutSpeech() {
+      if (activeRecorder && activeRecorder.state === "recording") {
+        activeRecorder.onstop = function () {
+          cleanupMedia();
+          flowRunning = false;
+          setMeterText("没有听清");
+          setStatus("没有听清。", "请靠近一点，再说一遍。", "再试一次", "error");
+          showContinue("再试一次");
+        };
+        hideStop();
+        activeRecorder.stop();
+      }
+    }
+
+    async function finishRecording() {
+      const mimeType = (activeRecorder && activeRecorder.mimeType) || "audio/webm";
+      const reason = stopReason || "manual";
+      const blob = new Blob(chunks, { type: mimeType });
+      cleanupMedia();
+      flowRunning = false;
+      completed = true;
+      if (!blob.size) {
+        completed = false;
+        setMeterText("没有听清");
+        setStatus("没有听清。", "请再说一遍。", "再试一次", "error");
+        showContinue("再试一次");
+        return;
+      }
+      const audioBase64 = await blobToBase64(blob);
+      Streamlit.setComponentValue({
+        status: "recorded",
+        audio_base64: audioBase64,
+        mime_type: blob.type || mimeType || "audio/webm",
+        reason: reason,
+        recording_key: args.recording_key || "",
+      });
+    }
+
+    function blobToBase64(blob) {
+      return new Promise(function (resolve, reject) {
+        const reader = new FileReader();
+        reader.onloadend = function () {
+          const result = String(reader.result || "");
+          resolve(result.includes(",") ? result.split(",", 2)[1] : result);
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+      });
+    }
+
+    continueButton.addEventListener("click", function () {
+      startFlow();
+    });
+    stopButton.addEventListener("click", function () {
+      stopRecording("manual");
+    });
+
+    window.addEventListener("message", function (event) {
+      const data = event.data || {};
+      if (data.type !== "streamlit:render") {
+        return;
+      }
+      args = data.args || {};
+      const recordingKey = String(args.recording_key || "");
+      const shouldAutoStart = args.auto_start !== false;
+      if (recordingKey !== lastRecordingKey) {
+        lastRecordingKey = recordingKey;
+        resetUi();
+        if (shouldAutoStart) {
+          window.setTimeout(function () {
+            startFlow();
+          }, 350);
+        } else {
+          waitForManualStart();
+        }
+      }
+      refreshHeight();
+    });
+
+    hideContinue();
+    hideStop();
+    Streamlit.setComponentReady();
+    refreshHeight();
+  </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+[
+  {
+    "session_id": "fluctuating-001",
+    "participant_id": "demo-person-fluctuating",
+    "trajectory": "fluctuating",
+    "created_at": "2026-05-01T10:00:00+08:00",
+    "is_mock": true,
+    "domain_scores": {
+      "orientation": 0.80,
+      "memory": 0.72,
+      "language": 0.84,
+      "executive_function": 0.73,
+      "attention": 0.69,
+      "visuospatial": 0.71
+    },
+    "evidence": [
+      {
+        "domain": "attention",
+        "source": "dialog",
+        "text": "回答中间被环境声音打断，需要重新提示。"
+      },
+      {
+        "domain": "visuospatial",
+        "source": "clock",
+        "text": "数字间距不均匀，但方向关系基本可辨认。"
+      }
+    ],
+    "risk_level": "medium",
+    "explanation": "本次模拟表现有轻微波动，可能受注意力状态影响。",
+    "disclaimer": "本系统仅为技术原型，输出内容仅作认知健康风险提示参考，不构成医学诊断或治疗建议。如有健康疑虑，请咨询专业医生。"
+  },
+  {
+    "session_id": "fluctuating-002",
+    "participant_id": "demo-person-fluctuating",
+    "trajectory": "fluctuating",
+    "created_at": "2026-05-08T10:00:00+08:00",
+    "is_mock": true,
+    "domain_scores": {
+      "orientation": 0.86,
+      "memory": 0.80,
+      "language": 0.87,
+      "executive_function": 0.79,
+      "attention": 0.82,
+      "visuospatial": 0.78
+    },
+    "evidence": [
+      {
+        "domain": "memory",
+        "source": "dialog",
+        "text": "能完整回忆早餐和前一轮问题。"
+      },
+      {
+        "domain": "attention",
+        "source": "dialog",
+        "text": "能连续完成三步简短指令。"
+      },
+      {
+        "domain": "visuospatial",
+        "source": "clock",
+        "text": "数字布局比上次更均匀。"
+      }
+    ],
+    "risk_level": "low",
+    "explanation": "本次模拟表现较上次改善，说明轨迹不是简单单调下降。",
+    "disclaimer": "本系统仅为技术原型，输出内容仅作认知健康风险提示参考，不构成医学诊断或治疗建议。如有健康疑虑，请咨询专业医生。"
+  },
+  {
+    "session_id": "fluctuating-003",
+    "participant_id": "demo-person-fluctuating",
+    "trajectory": "fluctuating",
+    "created_at": "2026-05-15T10:00:00+08:00",
+    "is_mock": true,
+    "domain_scores": {
+      "orientation": 0.81,
+      "memory": 0.70,
+      "language": 0.83,
+      "executive_function": 0.72,
+      "attention": 0.68,
+      "visuospatial": 0.73
+    },
+    "evidence": [
+      {
+        "domain": "memory",
+        "source": "dialog",
+        "text": "能回忆一个关键词，但漏掉另一个刚提到的活动。"
+      },
+      {
+        "domain": "attention",
+        "source": "dialog",
+        "text": "注意力表现低于第二次 session。"
+      },
+      {
+        "domain": "visuospatial",
+        "source": "clock",
+        "text": "圆形轮廓略歪，数字没有明显偏侧。"
+      }
+    ],
+    "risk_level": "medium",
+    "explanation": "三次模拟记录呈现上下波动，不是简单单调下降。",
+    "disclaimer": "本系统仅为技术原型，输出内容仅作认知健康风险提示参考，不构成医学诊断或治疗建议。如有健康疑虑，请咨询专业医生。"
+  }
+]

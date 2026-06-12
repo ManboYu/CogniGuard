@@ -1,0 +1,97 @@
+[
+  {
+    "session_id": "mild-decline-001",
+    "participant_id": "demo-person-mild-decline",
+    "trajectory": "mild_decline",
+    "created_at": "2026-05-01T10:00:00+08:00",
+    "is_mock": true,
+    "domain_scores": {
+      "orientation": 0.82,
+      "memory": 0.78,
+      "language": 0.84,
+      "executive_function": 0.76,
+      "attention": 0.77,
+      "visuospatial": 0.74
+    },
+    "evidence": [
+      {
+        "domain": "memory",
+        "source": "dialog",
+        "text": "能回忆早餐，但需要一点提示。"
+      },
+      {
+        "domain": "visuospatial",
+        "source": "clock",
+        "text": "数字位置略不均匀，指针长度区分不明显。"
+      }
+    ],
+    "risk_level": "low",
+    "explanation": "首次模拟记录存在轻微不确定，但整体仍可完成任务。",
+    "disclaimer": "本系统仅为技术原型，输出内容仅作认知健康风险提示参考，不构成医学诊断或治疗建议。如有健康疑虑，请咨询专业医生。"
+  },
+  {
+    "session_id": "mild-decline-002",
+    "participant_id": "demo-person-mild-decline",
+    "trajectory": "mild_decline",
+    "created_at": "2026-05-08T10:00:00+08:00",
+    "is_mock": true,
+    "domain_scores": {
+      "orientation": 0.79,
+      "memory": 0.70,
+      "language": 0.82,
+      "executive_function": 0.72,
+      "attention": 0.74,
+      "visuospatial": 0.66
+    },
+    "evidence": [
+      {
+        "domain": "memory",
+        "source": "dialog",
+        "text": "重复询问刚才是否已经说过午饭安排。"
+      },
+      {
+        "domain": "visuospatial",
+        "source": "clock",
+        "text": "数字略集中在右侧，圆形轮廓不够完整。"
+      }
+    ],
+    "risk_level": "medium",
+    "explanation": "与首次模拟记录相比，记忆和视觉空间得分下降，需要继续观察。",
+    "disclaimer": "本系统仅为技术原型，输出内容仅作认知健康风险提示参考，不构成医学诊断或治疗建议。如有健康疑虑，请咨询专业医生。"
+  },
+  {
+    "session_id": "mild-decline-003",
+    "participant_id": "demo-person-mild-decline",
+    "trajectory": "mild_decline",
+    "created_at": "2026-05-15T10:00:00+08:00",
+    "is_mock": true,
+    "domain_scores": {
+      "orientation": 0.76,
+      "memory": 0.64,
+      "language": 0.80,
+      "executive_function": 0.68,
+      "attention": 0.70,
+      "visuospatial": 0.59
+    },
+    "evidence": [
+      {
+        "domain": "memory",
+        "source": "dialog",
+        "text": "对刚才出现的三个词只能回忆出一个。"
+      },
+      {
+        "domain": "executive_function",
+        "source": "dialog",
+        "text": "两步指令需要重复后才能完成。"
+      },
+      {
+        "domain": "visuospatial",
+        "source": "clock",
+        "text": "数字集中在右侧，指针方向不准确。"
+      }
+    ],
+    "risk_level": "medium",
+    "explanation": "三次模拟 session 中记忆和视觉空间连续下降，提示家属后续关注。",
+    "disclaimer": "本系统仅为技术原型，输出内容仅作认知健康风险提示参考，不构成医学诊断或治疗建议。如有健康疑虑，请咨询专业医生。"
+  }
+]

@@ -1,0 +1,65 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+!.env.production.example
+.streamlit/secrets.toml
+VPS_Password.txt
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+projects/*/python_deps/
+
+# Local data, uploads, caches
+data/
+data/voice_cache/
+data/audio/
+uploads/
+cache/
+.cache/
+.pytest_cache/
+chroma/
+.chroma/
+*.db
+*.sqlite
+*.sqlite3
+*.wav
+*.mp3
+*.m4a
+streamlit.log
+cloudflared.log
+
+# 预置演示语音是有意提交进仓库的（让默认演示出声），不受上面的音频忽略影响
+!assets/demo_voice/
+!assets/demo_voice/**
+
+# Deployment artifacts
+deploy/*.zip
+deploy/tools/
+
+# Reports and coverage
+.coverage
+htmlcov/
+outputs/
+
+# Local cleanup backup (do not commit — move to Desktop manually)
+_cleanup_backup/
+_cleanup_backup_*.zip
+
+# Local-only working files (kept on disk, not part of the published project)
+/AGENTS.md
+/CLAUDE.md
+/docs/worklog.md
+/docs/architecture-audit.md
+/docs/SPEC.md
+/docs/roadmap.md
+/docs/qwen-eval-report.md
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

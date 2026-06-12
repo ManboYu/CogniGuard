@@ -1,0 +1,34 @@
+[
+  {
+    "case_id": "clock_normal_001",
+    "image_path": "demo/fixtures/clock_samples/normal_clock.png",
+    "target_time": "11:10",
+    "is_mock": true,
+    "expected_risk_level": "low",
+    "expected_low_domains": [],
+    "notes": "模拟数据，非临床数据；圆形、数字布局和指针大致完整，用于正常画钟基准。"
+  },
+  {
+    "case_id": "clock_spatial_shift_001",
+    "image_path": "demo/fixtures/clock_samples/spatial_shift_clock.png",
+    "target_time": "11:10",
+    "is_mock": true,
+    "expected_risk_level": "medium",
+    "expected_low_domains": [
+      "visuospatial"
+    ],
+    "notes": "模拟数据，非临床数据；数字整体向右偏移，预期视觉空间分数应下降。"
+  },
+  {
+    "case_id": "clock_wrong_hands_001",
+    "image_path": "demo/fixtures/clock_samples/wrong_hands_clock.png",
+    "target_time": "11:10",
+    "is_mock": true,
+    "expected_risk_level": "medium",
+    "expected_low_domains": [
+      "visuospatial",
+      "executive_function"
+    ],
+    "notes": "模拟数据，非临床数据；指针方向明显不符合目标时间，预期视觉空间和执行功能分数应下降。"
+  }
+]

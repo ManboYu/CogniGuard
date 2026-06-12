@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Example only. Review before copying to a real .sh file on the server.
+# This script does not create .env and does not contain any API Key.
+
+PROJECT_DIR="/opt/cogniguard"
+STREAMLIT_LOG="$PROJECT_DIR/streamlit.log"
+CLOUDFLARED_LOG="$PROJECT_DIR/cloudflared.log"
+
+cd "$PROJECT_DIR"
+source .venv/bin/activate
+
+nohup python -m streamlit run app.py \
+  --server.address 127.0.0.1 \
+  --server.port 8501 \
+  --server.headless true \
+  > "$STREAMLIT_LOG" 2>&1 &
+STREAMLIT_PID=$!
+
+echo "Streamlit started on 127.0.0.1:8501, pid=$STREAMLIT_PID"
+echo "Streamlit log: $STREAMLIT_LOG"
+
+sleep 3
+
+nohup cloudflared tunnel --url http://127.0.0.1:8501 \
+  > "$CLOUDFLARED_LOG" 2>&1 &
+CLOUDFLARED_PID=$!
+
+echo "Cloudflare Quick Tunnel started, pid=$CLOUDFLARED_PID"
+echo "Cloudflared log: $CLOUDFLARED_LOG"
+echo "Waiting for trycloudflare.com address..."
+
+sleep 8
+
+PUBLIC_URL="$(grep -o 'https://[-a-zA-Z0-9.]*trycloudflare.com' "$CLOUDFLARED_LOG" | tail -1 || true)"
+
+if [ -n "$PUBLIC_URL" ]; then
+  echo "Temporary public URL: $PUBLIC_URL"
+else
+  echo "URL not found yet. Run:"
+  echo "grep -o 'https://[-a-zA-Z0-9.]*trycloudflare.com' $CLOUDFLARED_LOG | tail -1"
+fi
+

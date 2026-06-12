@@ -1,0 +1,346 @@
+[
+  {
+    "text": "梨子、雨伞……公交卡，我能跟着说，但怕等会儿会忘。",
+    "model": "cosyvoice-v3-flash",
+    "voice": "longlaoyi_v3",
+    "role": "patient",
+    "file": "tts_043c98939c5c7c292c4c7cac0465e4ad47b7fa37584a3d43122fe6467b7c8adf.mp3",
+    "bytes": "132091"
+  },
+  {
+    "text": "那个……那个东西，我知道在那边，可说不出名字。",
+    "model": "cosyvoice-v3-flash",
+    "voice": "longlaoyi_v3",
+    "role": "patient",
+    "file": "tts_0bac52fbf3e28f9d51f8b076a7233499bad76feaaae7fce59b4f4fb08e8ae232.mp3",
+    "bytes": "98971"
+  },
+  {
+    "text": "我们聊聊平时习惯。如果下午要去楼下散步，您一般会先准备哪几样东西？",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_0e1dd9f77827251d89ee1a2f675106a972ce1ca702b3452fab2464b4e0b818a3.mp3",
+    "bytes": "313964"
+  },
+  {
+    "text": "张奶奶，您好，我是小顾。今天先从日期聊起，您觉得今天大概是周几？想到哪个就先说哪个。",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_10d77c710a0fa71104a61db18c24739bbdd8d6e5ce42b046775bc96a6a15c1f6.mp3",
+    "bytes": "503084"
+  },
+  {
+    "text": "张奶奶，您好，我是小顾，今天陪您轻松聊几句。您知道今天大概是星期几吗？",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_1b524ec669170f0afdde5884f965d066b99ccd373ba359b2bbdfb1ff7dd015c7.mp3",
+    "bytes": "373484"
+  },
+  {
+    "text": "我分不清，现在像早上又像下午，也不知道星期几。",
+    "model": "cosyvoice-v3-flash",
+    "voice": "longlaoyi_v3",
+    "role": "patient",
+    "file": "tts_1b9f7dc451fa6f2b135528b319568b61e05ca332a41b299d1b293f5d5a0bfb6b.mp3",
+    "bytes": "124891"
+  },
+  {
+    "text": "这次只听三个词：梨子、雨伞、公交卡。记住哪个就说哪个。",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_1cd360cc63665988c7cf96268d59d4f0cb4773547751983d60e0b2b0c3b3af62.mp3",
+    "bytes": "311084"
+  },
+  {
+    "text": "您好，我是小顾，今天陪您轻松聊几句。您知道今天大概是星期几吗？",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_21c69226226e9a8da05f240d8e3879c00478216189de784ddb79ecacf251391a.mp3",
+    "bytes": "315884"
+  },
+  {
+    "text": "最后只问一个位置：厨房大概在客厅的哪边？",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_3196f7d0f8b1170e15b5bddcd017807b370641679e974302d1adbd823861affa.mp3",
+    "bytes": "196844"
+  },
+  {
+    "text": "梨子……后面两个我没记住，你刚才说过吗？",
+    "model": "cosyvoice-v3-flash",
+    "voice": "longlaoyi_v3",
+    "role": "patient",
+    "file": "tts_35d8ec0a90ba3acceb4f500378a47e60e717132b5862ec2c91bef405293cd534.mp3",
+    "bytes": "101371"
+  },
+  {
+    "text": "我不知道，要出门吗？我可能直接走，东西也想不起来。",
+    "model": "cosyvoice-v3-flash",
+    "voice": "longlaoyi_v3",
+    "role": "patient",
+    "file": "tts_3d647f5c789dd69558b1ad8ce40692890bc99f87247e593a6855af12f7218013.mp3",
+    "bytes": "123931"
+  },
+  {
+    "text": "窗边有一盆绿色植物，放在小架子上，叶子挺精神。",
+    "model": "cosyvoice-v3-flash",
+    "voice": "longlaoyi_v3",
+    "role": "patient",
+    "file": "tts_40c07d166f37826b7ee47783078175bb2a06a870b90af8ad600dce4335d0513f.mp3",
+    "bytes": "125371"
+  },
+  {
+    "text": "20、19、16……后面我乱了，不知道该怎么数。",
+    "model": "cosyvoice-v3-flash",
+    "voice": "longlaoyi_v3",
+    "role": "patient",
+    "file": "tts_4c20a2c86331a9147fa23e2851252c67d231b231a2d2ff4c155ddbe298c116c2.mp3",
+    "bytes": "124891"
+  },
+  {
+    "text": "从客厅走到厨房，您通常会先经过哪儿？按家里的样子说就行。",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_5035bdc5755dce6bae2aaf95a98fb4c8d9bceb8511c475ebc594bef685406f5f.mp3",
+    "bytes": "294764"
+  },
+  {
+    "text": "梨子、雨伞、公交卡，我记住了。",
+    "model": "cosyvoice-v3-flash",
+    "voice": "longlaoyi_v3",
+    "role": "patient",
+    "file": "tts_5b56c4495ab65dc43773442b42c37f39b80c0fe27398c8219b23df3518792225.mp3",
+    "bytes": "91291"
+  },
+  {
+    "text": "张奶奶，您好，我是小顾。我们从很简单的开始，您现在觉得是上午还是下午？",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_5e22627e52441cf743e64ee8cdc5b922207e742e5d9f36b468b041bbb5236c9b.mp3",
+    "bytes": "364844"
+  },
+  {
+    "text": "从客厅到厨房，中间通常会经过哪里？慢慢想，按顺序说。",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_6517f707e9b8ba6ad80160cda1f681b306a16516bb26d386460151ec2eac3ff3.mp3",
+    "bytes": "302444"
+  },
+  {
+    "text": "如果现在要出门，您会先做什么？说一个动作就可以。",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_6cdcc50e6427096d491533c1d25fb6a49e5d0dc881349048df17598829aadf0f.mp3",
+    "bytes": "220844"
+  },
+  {
+    "text": "咱们换个轻松的话题。请您看看身边，任选一样东西，说说它是什么、在哪里。",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_70d17e0efa426abd41f5911daddfed30e11dfbc55fb27524d1e5a50c99adbf93.mp3",
+    "bytes": "337004"
+  },
+  {
+    "text": "窗边有个绿色的盆栽，放在架子上，名字我一下想不起来。",
+    "model": "cosyvoice-v3-flash",
+    "voice": "longlaoyi_v3",
+    "role": "patient",
+    "file": "tts_827f2680c5ffadf8284b214f2d916819e3b263e6b16253ffdda0b87cc53aea5d.mp3",
+    "bytes": "132571"
+  },
+  {
+    "text": "我记下来了。接下来请您记三个词：梨子、雨伞、公交卡。先跟我说一遍可以吗？",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_833eed39c7a9b7a016a94c4767b239b8a4773729a403947e099a86c88b5d3760.mp3",
+    "bytes": "366764"
+  },
+  {
+    "text": "最后想请您想一想，从客厅走到厨房，通常会经过哪里？按您熟悉的路线说就好。",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_8ac7e0d3ff925d3a9a36c5040b638acfb1f9e978a4fe5efb71f4a6cc65bb0c22.mp3",
+    "bytes": "399404"
+  },
+  {
+    "text": "应该是周五吧，也可能是周六，我最近有点拿不准。",
+    "model": "cosyvoice-v3-flash",
+    "voice": "longlaoyi_v3",
+    "role": "patient",
+    "file": "tts_8d2fd114fac8ad05b561e41f544ab7fb561b775309158a1adb74e0555b754a4d.mp3",
+    "bytes": "114331"
+  },
+  {
+    "text": "我们换一个很短的数字。20 后面往回数一点点，可以吗？",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_916003521c5ac658984ea5b037e8990862f537929c6bd710075ccda3e12fa6df.mp3",
+    "bytes": "285164"
+  },
+  {
+    "text": "如果下午想下楼走走，您一般会先做哪两件事？",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_9527bfa67750961ae5af6cc5daef98835032d9857c42522070f13a64dbe0380e.mp3",
+    "bytes": "211244"
+  },
+  {
+    "text": "我分不清哪边，厨房在哪里也说不好。",
+    "model": "cosyvoice-v3-flash",
+    "voice": "longlaoyi_v3",
+    "role": "patient",
+    "file": "tts_95bd184219380f0a9c9285140a9d714021df1e3ca50191181e4094c697600909.mp3",
+    "bytes": "86491"
+  },
+  {
+    "text": "接下来记三个小东西：梨子、雨伞、公交卡。您先照着说一遍。",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_991dc6c6a33296e036655dccdd24fb351bac81290aa75cdb5e87533f3ec6a4a1.mp3",
+    "bytes": "315884"
+  },
+  {
+    "text": "20、18、15……我知道要往回数，但中间有点乱。",
+    "model": "cosyvoice-v3-flash",
+    "voice": "longlaoyi_v3",
+    "role": "patient",
+    "file": "tts_9c38fbc691a7e63934447056bdb8afd71b7a5812510a97abf3983f4cef737da9.mp3",
+    "bytes": "144571"
+  },
+  {
+    "text": "接下来做个短数字练习。请从 20 往回每次减 3，数三个数就可以。",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_9e99d5fae2da4e454b456265eebc38741b2177f2506fea25d4e6979470c8feff.mp3",
+    "bytes": "354284"
+  },
+  {
+    "text": "我会先换鞋，可能还要拿钥匙，其他要想一想。",
+    "model": "cosyvoice-v3-flash",
+    "voice": "longlaoyi_v3",
+    "role": "patient",
+    "file": "tts_9fcb87347d6c7373b36c4602c591a32c0e12bcba3ba8fb33305845fabbe77090.mp3",
+    "bytes": "111931"
+  },
+  {
+    "text": "20、17、14，我可以慢慢往下数。",
+    "model": "cosyvoice-v3-flash",
+    "voice": "longlaoyi_v3",
+    "role": "patient",
+    "file": "tts_a01bfe61919fceb910c0467f7d939335d1f002fb5e345a8d526f99011363aa43.mp3",
+    "bytes": "103291"
+  },
+  {
+    "text": "选一个您看得到的东西，说说它长什么样、在什么地方。",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_a7fd9f70b02425b137aeb45c3d6d9fc9ec0cc7d5f22100184e1f90270f2d8cfa.mp3",
+    "bytes": "239084"
+  },
+  {
+    "text": "我先说三个词：梨子、雨伞、公交卡。您跟着说一遍可以吗？",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_ac71d91896e59213038af94456f7559504eb1fa6c484992c565207fc3a50cca3.mp3",
+    "bytes": "313004"
+  },
+  {
+    "text": "我大概先往餐桌那边走，再到厨房，但中间顺序有点想不清。",
+    "model": "cosyvoice-v3-flash",
+    "voice": "longlaoyi_v3",
+    "role": "patient",
+    "file": "tts_b3afe2dc11ccae958554e3663f881dbdcfd66589b3a269ff5955f607bc52626f.mp3",
+    "bytes": "142171"
+  },
+  {
+    "text": "看看身边一样东西，简单说说它是什么、放在哪儿。",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_c0601752df06a079f2548075a4179bd19e0f41da3abf50ba4ce83f44f587cd8a.mp3",
+    "bytes": "217964"
+  },
+  {
+    "text": "如果下午下楼散步，您通常会先准备哪几样东西？",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_ce3a9418eec88fcc05d482e403bd9a73b5a62f7af21793b0d7ae65196ee641d8.mp3",
+    "bytes": "224684"
+  },
+  {
+    "text": "今天是周六，我早上看了手机上的日期。",
+    "model": "cosyvoice-v3-flash",
+    "voice": "longlaoyi_v3",
+    "role": "patient",
+    "file": "tts_d4cdcdd2f02c007999f82f49b769f1037a51db771646a9fd3cef364b89d2398f.mp3",
+    "bytes": "90331"
+  },
+  {
+    "text": "我会先换鞋，带好门卡和纸巾，再看看外面热不热。",
+    "model": "cosyvoice-v3-flash",
+    "voice": "longlaoyi_v3",
+    "role": "patient",
+    "file": "tts_d554b0888e5f59fa6d10a12a53bfa2c5658d134d6d39f552ad5d523dace3931e.mp3",
+    "bytes": "113371"
+  },
+  {
+    "text": "我们试一个小数字，从 20 往回减 3，说三个就停。",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_d649f92504551097cb59a9f1af6c08db9bfa9649fd1da73305d904e8dac241e7.mp3",
+    "bytes": "244844"
+  },
+  {
+    "text": "我们再做一个小小游戏，好吗？请您在纸上画一个钟，指到 11 点 10 分。画好后拍张照片就可以，不着急，慢慢来。",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_dceda886f6a0c6584bbd22ad353acc86b65b89ffb28471e8d2db287c531510b3.mp3",
+    "bytes": "472364"
+  },
+  {
+    "text": "看一眼身边，告诉我一个您看到的东西就可以。",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_de7e04c8a16b84124af5ce11d7d948e3dc4436a523f326ceca0b16f0a96f27c2.mp3",
+    "bytes": "184364"
+  },
+  {
+    "text": "我会从客厅往餐桌旁边走，再转到厨房门口。",
+    "model": "cosyvoice-v3-flash",
+    "voice": "longlaoyi_v3",
+    "role": "patient",
+    "file": "tts_fa484da2133a7762128efe019675261c6530008414e4925106fabd88c3b5e249.mp3",
+    "bytes": "108091"
+  },
+  {
+    "text": "我们做个很短的数字练习，从 20 往回每次减 3，说三个数就好。",
+    "model": "qwen-tts",
+    "voice": "Cherry",
+    "role": "system",
+    "file": "tts_faddeb339d4f9e7515f74a40cdc0511a24eb13bbe2952b981576b734e294d2ea.mp3",
+    "bytes": "292844"
+  }
+]

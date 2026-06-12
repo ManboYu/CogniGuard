@@ -1,0 +1,26 @@
+<svg width="1280" height="360" viewBox="0 0 1280 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">CogniGuard horizontal logo</title>
+  <desc id="desc">CogniGuard wordmark with a friendly shield, conversation bubble, and cognitive clock mark.</desc>
+  <rect width="1280" height="360" rx="8" fill="#F7FAF8"/>
+  <g transform="translate(72 44) scale(0.53)">
+    <rect width="512" height="512" rx="64" fill="#F7FAF8"/>
+    <path d="M256 60L392 111V222C392 310 337 390 256 427C175 390 120 310 120 222V111L256 60Z" fill="#2F7D62"/>
+    <path d="M256 91L363 131V221C363 292 320 359 256 390C192 359 149 292 149 221V131L256 91Z" fill="#FFFFFF"/>
+    <path d="M182 181C182 152.833 204.833 130 233 130H283C317.242 130 345 157.758 345 192C345 226.242 317.242 254 283 254H246L206 289V254H233C204.833 254 182 231.167 182 203V181Z" fill="#E9F5EF"/>
+    <path d="M205 191C205 167.804 223.804 149 247 149H280C304.853 149 325 169.147 325 194C325 218.853 304.853 239 280 239H239L220 255V239H247C223.804 239 205 220.196 205 197V191Z" fill="#FFFFFF"/>
+    <circle cx="256" cy="194" r="57" fill="#F7FAF8" stroke="#244F72" stroke-width="18"/>
+    <path d="M256 157V196L288 215" stroke="#244F72" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="256" cy="194" r="10" fill="#B85F4C"/>
+    <circle cx="211" cy="318" r="16" fill="#7AA66F"/>
+    <circle cx="256" cy="335" r="18" fill="#244F72"/>
+    <circle cx="303" cy="318" r="16" fill="#7AA66F"/>
+    <path d="M225 322L241 329M272 329L289 322" stroke="#244F72" stroke-width="12" stroke-linecap="round"/>
+    <path d="M198 352C225 380 287 380 314 352" stroke="#B85F4C" stroke-width="16" stroke-linecap="round"/>
+  </g>
+  <text x="366" y="157" fill="#1D3148" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="82" font-weight="850" letter-spacing="0">CogniGuard</text>
+  <text x="369" y="214" fill="#2F7D62" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="31" font-weight="750" letter-spacing="0">Gentle cognitive health companion</text>
+  <path d="M370 250H704" stroke="#D7E5DE" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="742" cy="250" r="10" fill="#B85F4C"/>
+  <circle cx="779" cy="250" r="10" fill="#7AA66F"/>
+  <circle cx="816" cy="250" r="10" fill="#244F72"/>
+</svg>
